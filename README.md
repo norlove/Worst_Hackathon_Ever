@@ -16,14 +16,23 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
   b. sudo apt-get install build-essential
   
   c. sudo gem install t
+  
   d. sudo gem install twurl (ran into some issues with authorizing just t, so installed twurl)
+  
   e. sudo twurl authorize --consumer-key <consumer key> --consumer-secret <consumer secret>
+  
   f. sudo cp /root/.twurlrc /root/.trc
+  
   g. sudo twurl accounts
+  
   e. sudo t accounts
+  
   f. sudo t update "Hello World #hackathon" (boom, tweet should have been sent! The reason you have to use sudo is because the GCP Startup scripts run as root)
+  
 3. For each GCE instace, configure a startup script from the Google Cloud Console and store the script in GCS
+
   i.e. example: sudo t update "E. Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever" (in this example the E will be the second character in "Hello_World" and you'll use the NLP API to generate a sentiment score based off the "Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever" and order the tweets according to positive sentiment.
+  
   Here are all the scripts:
   
     sudo t update "H. Having so much fun! Love programming! AMAZING! Best thing ever! #worsthackathonever"
