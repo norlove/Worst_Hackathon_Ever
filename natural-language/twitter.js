@@ -30,7 +30,7 @@ const table = dataset.table(config.bigquery_table);
 
 // Replace searchTerms with whatever tweets you want to stream
 // Details here: https://dev.twitter.com/streaming/overview/request-parameters#track
-const searchTerms = '#googlenext17,@googlecloud,google cloud';
+const searchTerms = '#worsthackathonever,#hackathon,#hack,#programmer,#computer,#Google,#GCP,#GoogleCloud';
 
 function callNLMethod(tweet, method) {
 	const textUrl = `https://language.googleapis.com/v1/documents:${method}?key=${config.nl_api_key}`;
