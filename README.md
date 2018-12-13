@@ -3,6 +3,7 @@
 Description: Uses Google Cloud Platform to say "Hello World" via the most innefficient manner possible. This is purely for fun, not an official Google product, and should not be used as a best practice for saying "Hello World".
 
 This program uses the following architecture to spin up 11 GCE instances, each with a startup script that tweets a character of "Hello_World", has a 12th GCE instance with a Twitter listener installed listening for specific Tweets with various hashtags, passes those tweets to the Google Cloud NLP API to abstract sentiment, streams the NLP API reponses to BigQuery, and then uses Data Studio and BigQuery to combine the letters in the correct order to display Hello World with some other cool stats.
+<img src="Worst Hackathon Ever Architecture.png" width="300"/>
 
 Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integration. Check our her GitHub for this code and more here: https://github.com/sararob/ml-talk-demos
 
