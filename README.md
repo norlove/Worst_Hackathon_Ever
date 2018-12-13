@@ -20,7 +20,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
   f. sudo t update "Hello World #hackathon" (boom, tweet should have been sent! The reason you have to use sudo is because the GCP Startup scripts run as root)
 3. For each GCE instace, configure a startup script from the Google Cloud Console and store the script in GCS
   i.e. example: sudo t update "E. Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever" (in this example the E will be the second character in "Hello_World" and you'll use the NLP API to generate a sentiment score based off the "Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever" and order the tweets according to positive sentiment.
-  Here are all the scripts:
+  Here are all the scripts:/n/n/n
     sudo t update "H. Having so much fun! Love programming! AMAZING! Best thing ever! #worsthackathonever"
     sudo t update "E. Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever"
     sudo t update "L. Loving the Google Cloud APIS!!! Talk about the best thing ever! #worsthackathonever"
