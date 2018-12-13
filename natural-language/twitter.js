@@ -70,13 +70,20 @@ client.stream('statuses/filter', {track: searchTerms, language: 'en'}, function(
 
 					let row = {
 							id: tweet.id_str,
-							text: tweet.text,
-							created_at: tweet.timestamp_ms.toString(),
-							user_followers_count: tweet.user.followers_count,
-							hashtags: JSON.stringify(tweet.entities.hashtags),
-							tokens: JSON.stringify(syntaxData.tokens),
-							score: sentimentData.documentSentiment.score,
-							magnitude: sentimentData.documentSentiment.magnitude
+                                                        name: tweet.user.name,
+                                                        screen_name: tweet.user.screen_name,
+                                                        text: tweet.text,
+                                                        created_at: tweet.timestamp_ms,
+                                                        user_utc_offset: tweet.user.utc_offset,
+                                                        user_time_zone: tweet.user.time_zone,
+                                                        user_location: tweet.user.location,
+                                                        user_coordinates: tweet.coordinates,
+                                                        user_followers_count: tweet.user.followers_count,
+                                                        hashtags: JSON.stringify(tweet.entities.hashtags),
+                                                        tokens: JSON.stringify(syntaxData.tokens),
+                                                        entities: JSON.stringify(sentimentData.documentSentiment.entities),
+                                                        score: sentimentData.documentSentiment.score,
+                                                        magnitude: sentimentData.documentSentiment.magnitude
 					};
 
 					table.insert(row, function(error, insertErr, apiResp) {
