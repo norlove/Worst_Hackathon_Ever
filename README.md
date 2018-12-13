@@ -36,7 +36,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
 
       i.e. example: sudo t update "E. Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever" (in this example the E will be the second character in "Hello_World" and you'll use the NLP API to generate a sentiment score based off the "Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever" and order the tweets according to positive sentiment.
   
-            Here are all the scripts:
+ Here are all the scripts:
   
     sudo t update "H. Having so much fun! Love programming! AMAZING! Best thing ever! #worsthackathonever"
     sudo t update "E. Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever"
@@ -51,13 +51,13 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
     sudo t update "D. Hacking for the worst hackathon ever! Talk about an inefficient way of saying hello world. Horrible! #worsthackathonever"
 
 
-## Natural Language API BigQuery demo
+## Build Twitter Listener and Send Tweets to NLP API and BigQuery
 
 1. `cd` into `natural-language/`
 2. Generate [Twitter Streaming API](https://dev.twitter.com/streaming/overview) credentials and copy them to `local.json`
 3. Create a Google Cloud project, generate a JSON keyfile, and add the filepath to `local.json`
 4. Create a BigQuery dataset and table with the below schema, add them to `local.json`
-<img src="table-schema.png" width="300"/>
+<img src="BigQuery Schema.png" width="300"/>
 
 5. Generate an API key and add it to `local.json`
 6. Change line 37 to filter tweets on whichver terms you'd like
