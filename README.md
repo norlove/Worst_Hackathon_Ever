@@ -37,7 +37,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
       i.e. example: sudo t update "E. Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever" (in this example the E will be the second character in "Hello_World" and you'll use the NLP API to generate a sentiment score based off the "Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever" and order the tweets according to positive sentiment.
   
  Here are all the scripts:
-  
+ ```
     sudo t update "H. Having so much fun! Love programming! AMAZING! Best thing ever! #worsthackathonever"
     sudo t update "E. Having an awesome time! Love hacking! Boom! Best thing ever! #worsthackathonever"
     sudo t update "L. Loving the Google Cloud APIS!!! Talk about the best thing ever! #worsthackathonever"
@@ -49,7 +49,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
     sudo t update "R. Going head to head in the worst hackathon! #worsthackathonever"
     sudo t update "L. I hate poorly written programs. Yuck! #worsthackathonever"
     sudo t update "D. Hacking for the worst hackathon ever! Talk about an inefficient way of saying hello world. Horrible! #worsthackathonever"
-
+```
 
 ## Build Twitter Listener and Send Tweets to NLP API and BigQuery
 
@@ -73,6 +73,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
 3. Check out your BigQuery table and confirm Tweets are successfully being streamed in.
 
 4. Write a SQL query to Spell out Hello_World
+```
       SELECT
         regexp_replace(STRING_AGG(firstLetter),",","") AS Text,
         screen_name
@@ -88,8 +89,9 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
           score DESC)
       GROUP BY
         screen_name
-
+```
 5. You can also write SQL queries to count the total number of H's or if you are exporting your GCP bill to BigQuery, you can also calculate the total cost of this project using GCP Labels. 
+```
       SELECT
         SUM(hCount) as hTotalCount
       FROM (
@@ -99,7 +101,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
           <BigQuery table you are streaming to> )
       LIMIT
         1
-
+```
 
 You can make your final output look like this:
 
