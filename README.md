@@ -52,7 +52,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
 <img src="BigQuery Schema.png" width="300"/>
 
 5. Generate an API key and add it to `local.json`
-6. Change line 37 to filter tweets on whichver terms you'd like
+6. Change line 33 of twitter.js to filter tweets on whichver terms you'd like
 7. Install node modules: `npm install`
 8. Run the script: `node twitter.js`
 
