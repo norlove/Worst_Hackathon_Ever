@@ -12,7 +12,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
 ## Create and configure 11 GCE instances to tweet at startup
 1. Go through the process of creating a [Twitter Developer Account](https://dev.twitter.com/streaming/overview) and getting API keys.
 
-2. Follow [this guide] (https://www.ostechnix.com/tweet-commandline-linux/) to configure your GCE Linux host to tweet from the CLI.
+2. Follow [this guide](https://www.ostechnix.com/tweet-commandline-linux/) to configure your GCE Linux host to tweet from the CLI.
 
       a. sudo apt-get install ruby-dev
 
