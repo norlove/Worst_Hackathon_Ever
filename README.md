@@ -45,9 +45,9 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
 
 ## Build Twitter Listener and Send Tweets to NLP API and BigQuery
 
-1. `cd` into `natural-language/`
-2. Generate [Twitter Streaming API](https://dev.twitter.com/streaming/overview) credentials and copy them to `local.json`
-3. Create a Google Cloud project, generate a JSON keyfile, and add the filepath to `local.json`
+1. Copy this repo onto a 12th GCE instance, `cd` into `natural-language/`
+2. Paste the same Twitter API credentials into `local.json`
+3. Within your GCP Project, generate a Service Account JSON keyfile, and add the filepath to `local.json`
 4. Create a BigQuery dataset and table with the below schema, add them to `local.json`
 <img src="BigQuery Schema.png" width="300"/>
 
