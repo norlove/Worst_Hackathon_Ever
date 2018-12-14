@@ -64,4 +64,10 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
 7. Install node modules: `npm install`
 8. Run the script: `node twitter.js`
 
+## Create some BigQuery Views and a Data Studio Dasboard to Display Hello_World
 
+1.
+
+
+You can make your final output look like this:
+<img src="Data Studio Dashboard.png" width="500"/>
