@@ -66,8 +66,42 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
 
 ## Create some BigQuery Views and a Data Studio Dasboard to Display Hello_World
 
-1.
+1. Kick off your Twitter Listener and start streaming tweets into BigQuery
+
+2. Start all 11 of your GCE instances which will Tweet at startup.
+
+3. Check out your BigQuery table and confirm Tweets are successfully being streamed in.
+
+4. Write a SQL query to Spell out Hello_World
+      SELECT
+        regexp_replace(STRING_AGG(firstLetter),",","") AS Text,
+        screen_name
+      FROM (
+        SELECT
+          SUBSTR(text, 1, 1) AS firstLetter,
+          screen_name
+        FROM
+          <BigQuery table you are streaming to>
+        WHERE
+          screen_name = <Twitter handle you are tweeting from>
+        ORDER BY
+          score DESC)
+      GROUP BY
+        screen_name
+
+5. You can also write SQL queries to count the total number of H's or if you are exporting your GCP bill to BigQuery, you can also calculate the total cost of this project using GCP Labels. 
+      SELECT
+        SUM(hCount) as hTotalCount
+      FROM (
+        SELECT
+          LENGTH(text) - LENGTH(REGEXP_REPLACE(text, 'h', '')) AS hCount
+        FROM
+          <BigQuery table you are streaming to> )
+      LIMIT
+        1
 
 
 You can make your final output look like this:
+
+
 <img src="Data Studio Dashboard.png" width="500"/>
