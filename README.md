@@ -72,7 +72,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
 
 3. Check out your BigQuery table and confirm Tweets are successfully being streamed in.
 
-4. Write a SQL query to Spell out Hello_World
+4. BigQuery is now going to be capturing lots of Tweets, you need to separate out the Hello World tweets. You can do this by writing a SQL query like the one below. Save it as a BigQuery View.
 ```
       SELECT
         regexp_replace(STRING_AGG(firstLetter),",","") AS Text,
@@ -90,7 +90,7 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
       GROUP BY
         screen_name
 ```
-5. You can also write SQL queries to count the total number of H's or if you are exporting your GCP bill to BigQuery, you can also calculate the total cost of this project using GCP Labels. 
+5. You can also write SQL queries to count the total number of H's or if you are exporting your GCP bill to BigQuery, you can also calculate the total cost of this project using GCP Labels. Save these as BigQuery Views.
 ```
       SELECT
         SUM(hCount) as hTotalCount
@@ -103,7 +103,23 @@ Hats off to Sara Robinson for building the Twitter -> NLP -> BigQuery integratio
         1
 ```
 
-You can make your final output look like this:
+```
+      SELECT
+        SUM(cost) as totalCost,
+        l.key
+      FROM
+        <GCP Billing Export BigQuery table>,
+        UNNEST (labels) AS l
+      WHERE
+        l.key = <label you've been using to aggregate all activity based on this hackathon>
+      GROUP BY
+        l.key
+      LIMIT
+        1
+```
 
+6. Now that you've got all this data in BigQuery, the next step is to get it displayed on a more user friendly dashboard like Data Studio. Connect your relevant data sources and Views to Data Studio and build a dashboard like this:
 
 <img src="Data Studio Dashboard.png" width="500"/>
+
+HELLO WORLD! 
