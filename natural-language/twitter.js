@@ -65,6 +65,7 @@ client.stream('statuses/filter', {track: searchTerms, language: 'en'}, function(
    		if ((tweet.text != undefined) && (tweet.text.substring(0,2) != 'RT')) {
 			async function analyzeTweet() {
 				try {
+					console.log(tweet.text);
 					let syntaxData = await callNLMethod(tweet, 'analyzeSyntax');
 					let sentimentData = await callNLMethod(tweet, 'analyzeSentiment');
 
